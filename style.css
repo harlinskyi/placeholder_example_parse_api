@@ -78,6 +78,24 @@ body {
 }
 
 .bd-placeholder-img {
-  width: 32px;
-  height: 32px;
+  width: 64px;
+  height: 64px;
+}
+.postLine {
+  transition: all 0.4s;
+}
+.postLine:hover {
+  border: 2px solid #fff;
+  background-color: #212529;
+  color: #fff !important;
+  transform: scale(1.05);
+}
+.firstLetter {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
 }
