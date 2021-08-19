@@ -1,7 +1,9 @@
 const template = (id, title, userId, body) => {
     return `
-    <div class="d-flex text-muted pt-3">
-    <div class="bd-placeholder-img flex-shrink-0 me-2 rounded" style="background-color: #${(Math.random().toString(16)).substring(2, 8)};"></div>
+    <div class="d-flex text-muted p-3 postLine rounded">
+    <div class="bd-placeholder-img flex-shrink-0 me-2 rounded text-center white" style="background-color: #${(Math.random().toString(16)).substring(2, 8)};">
+    <span class="firstLetter">${title[0].toUpperCase()}</span>
+    </div>
     <p class="pb-3 mb-0 small lh-sm border-bottom">
       <span class="d-block text-gray-dark"><small class="me-2">PostId:&nbsp;${id}</small><small>UserId:&nbsp;${userId}</small></span>
       <strong class="d-block text-gray-dark msgTitle">${title}</strong>
@@ -29,6 +31,7 @@ const p = new Promise((resolve, reject) => {
                     obj.userId,
                     obj.body
                 );
+                console.log(obj.title[0]);
                 postBlock.insertAdjacentHTML('beforeEnd', htmlPost);
             });
             document.getElementById('countPosts').innerText = data.length;
